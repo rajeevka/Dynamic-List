@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        .container{
+            display: flex;
+            height: 10vh;
+    
+
+        }
+        input{
+            height: 20px;
+            width: 200px;
+             margin: 14px;
+        }
+        button{
+            height: 20px;
+            width: 100px;
+            margin-top: 15px;
+            display: flex;justify-content: center;
+            align-items: center;
+            background-color: white;
+           
+            border-radius: 5px;
+        }
+        .listclass button1{
+            width: 15%;
+            /* display: flex;
+            justify-content: space-around;
+            list-style-type: disc;
+            margin-top: 10px; */
+            
+        }
+        .listclass{
+            width: 25%;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <div class="container">
+        <p>Enter a New Item :</p>
+        <input type="text" id="input">
+        <button onclick="addItem()">Add Item</button></div>
+        <ul id="list">
+
+        </ul>
+        
+    
+    <script>
+        
+         let count = 1;
+        function addItem() {
+             var input = document.getElementById("input")
+             var li = document.createElement("li")
+            li.setAttribute("class", `listclass${count}`)
+            var button = document.createElement("button")
+            button.onClick = "listDelete()"
+            li.innerHTML = ` ${input.value}<button onClick="listDelete()" class="button1${count}">Delete</button>`
+             var list1 = document.getElementById("list")
+               list1.appendChild(li)
+              count++;
+           }
+    </script>
+    
+</body>
+</html>
